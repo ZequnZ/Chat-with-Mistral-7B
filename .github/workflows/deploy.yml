@@ -16,7 +16,8 @@ jobs:
       - name: Add remote 
         env:
           HG: ${{ secrets.HF_WRITE_TOKEN }}
-        run: git remote add space https://ZequnZ:$HF_WRITE_TOKEN@huggingface.co/spaces/ZequnZ/Chat-with-Mistral-7B
+        # run: git remote add space https://ZequnZ:$HF_WRITE_TOKEN@huggingface.co/spaces/ZequnZ/Chat-with-Mistral-7B
+        run: git remote set-url origin https://ZequnZ:$HF_WRITE_TOKEN@huggingface.co/spaces/ZequnZ/Chat-with-Mistral-7B
       - name: Push to hub
         env:
           HG: ${{ secrets.HF_WRITE_TOKEN }}
