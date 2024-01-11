@@ -9,7 +9,8 @@ from text_generation import Client
 model_id = "mistralai/Mistral-7B-Instruct-v0.1"
 
 API_URL = "https://api-inference.huggingface.co/models/" + model_id
-HF_TOKEN = os.environ.get("Mistral-7B-Read", False)
+HF_TOKEN = os.environ.get("M7B_read_token", False)
+
 SYSTEM_PROMPT = "I want you to act as a great assistant. You will provide trustful information and can inspire me to think more using supportive languages."
 
 client = Client(
@@ -63,7 +64,7 @@ with gr.Blocks(theme=theme) as demo:
                 minimum=1,
                 maximum=1024,
                 step=1,
-                value=128,
+                value=256,
             )
             temperature = gr.Slider(
                 label="Temperature",
@@ -84,7 +85,7 @@ with gr.Blocks(theme=theme) as demo:
                 minimum=1,
                 maximum=100,
                 step=1,
-                value=10,
+                value=30,
             )
 
     with gr.Row():
@@ -195,4 +196,4 @@ with gr.Blocks(theme=theme) as demo:
 
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.queue(max_size=32).launch(show_api=False)
