@@ -2,13 +2,14 @@ from typing import Iterator
 import gradio as gr
 import random
 import time
+import os
 
 from text_generation import Client
 
 model_id = "mistralai/Mistral-7B-Instruct-v0.1"
 
 API_URL = "https://api-inference.huggingface.co/models/" + model_id
-HF_TOKEN = "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"
+HF_TOKEN = os.environ.get("Mistral-7B-Read", False)
 SYSTEM_PROMPT = "I want you to act as a great assistant. You will provide trustful information and can inspire me to think more using supportive languages."
 
 client = Client(
@@ -49,7 +50,9 @@ def generate_prompts(
 theme = "WeixuanYuan/Soft_dark"
 
 with gr.Blocks(theme=theme) as demo:
-    gr.Markdown("# Chat with Mistral-7B\n[Github](https://github.com/ZequnZ/Chat-with-Mistral-7B)")
+    gr.Markdown(
+        "# Chat with Mistral-7B\n[Github](https://github.com/ZequnZ/Chat-with-Mistral-7B)"
+    )
     with gr.Row():
         chatbot = gr.Chatbot(scale=6)
 
