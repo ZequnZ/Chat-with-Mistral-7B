@@ -1,3 +1,18 @@
+---
+title: Chat with Mistral-7B
+emoji: 🌼
+colorFrom: purple
+colorTo: blue
+sdk: gradio
+sdk_version: 3.50.2
+python_version: 3.10.6
+app_file: app.py
+models:
+  - mistralai/Mistral-7B-Instruct-v0.1
+pinned: false
+license: mit
+---
+
 # Chat-with-Mistral-7B
 
 ![image](https://img.shields.io/badge/License-MIT-orange)
