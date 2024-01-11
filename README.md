@@ -23,6 +23,8 @@ This project aims to build a web interface for you as a user to chat with [Mistr
 - Re-generates the output to observe (maybe)different outputs.
 - Remove past conversations.
 
+**Feel free to chat with Mistral-7B [here](https://huggingface.co/spaces/ZequnZ/Chat-with-Mistral-7B)!**
+
 
 ![](./asset/interface.png)
 
